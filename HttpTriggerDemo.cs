@@ -8,6 +8,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
+public class ... {
+// Original handler
+public static async Task<IActionResult> Run(
+      [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+      ILogger log)
+      {
+       Twistlock.Serverless.Init(log);
+       ...
+      }
+}
+
 namespace Demos
 {
     public static class HttpTriggerDemo
